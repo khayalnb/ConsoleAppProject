@@ -1,0 +1,118 @@
+﻿using System;
+using HumanResourcesManagmentSystem.WarningMessages;
+using HumanResourcesManagmentSystem.SystemContentData.MenuContent;
+
+namespace HumanResourcesManagmentSystem.Services
+{
+    public static class MenuService
+    {
+        public static void Open()
+        {
+            appOpenService.AppOpen();
+        }
+        public static void Menu()
+        {
+            bool isContiune = true;
+            do
+            {
+                MenuContent.MainMenu();
+                Console.Write("Daxil et: ");
+                int choiceResult = int.Parse(Console.ReadLine());
+                switch (choiceResult)
+                {
+                    case 1:
+                        QuestionMenu();
+                        isContiune = false;
+
+                        break;
+                    case 2:
+                        UpdateMenu();
+                        isContiune = false;
+
+                        break;
+                    case 3:
+                        Environment.Exit(0);
+                        isContiune = false;
+                        break;
+                    default:
+                        Console.WriteLine(WarningMessage.wrongValueMessage);
+                        isContiune = true;
+                        break;
+                }
+            } while (isContiune);
+            
+        }
+        public static void QuestionMenu()
+        {
+            bool isContiune = true;
+            do
+            {
+                MenuContent.QuestionMenuContents();
+                Console.Write("Daxil et: ");
+                int questionChoiceResult = int.Parse(Console.ReadLine());
+                switch (questionChoiceResult)
+                {
+                    case 1:
+                        Console.WriteLine("hello");
+                        isContiune = false;
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        Menu();
+                        break;
+                    case 8:
+                        Environment.Exit(0);
+                        isContiune = false;
+                        break;
+                    default:
+                        Console.WriteLine(WarningMessage.wrongValueMessage);
+                        isContiune = true;
+                        break;
+                }
+            } while (isContiune);
+        }
+        public static void UpdateMenu()
+        {
+            bool isContiune = true;
+            do
+            {
+                MenuContent.UpdateMenuContents();
+                Console.Write("Daxil et: ");
+                int updateChoiceResult = int.Parse(Console.ReadLine());
+                switch (updateChoiceResult)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        Menu();
+                        break;
+                    case 7:
+                        Environment.Exit(0);
+                        isContiune = false;
+                        break;
+                    default:
+                        Console.WriteLine(WarningMessage.wrongValueMessage);
+                        isContiune = true;
+                        break;
+                }
+            } while (isContiune);
+        }
+    }
+}
