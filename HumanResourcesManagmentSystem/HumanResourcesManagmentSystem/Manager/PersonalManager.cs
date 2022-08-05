@@ -32,16 +32,8 @@ namespace HumanResourcesManagmentSystem.Manager
             UpdateService updateService = new UpdateService();
             updateService.AddEmployeeInfoToDB(personal);
         }
-        public static void Ready()
-        {
-            List<Personal> personals = DatabaseConnection.ReadyPersonalList();
-            foreach (var item in personals)
-            {
-                Console.Write(item.Id + " " + item.EmployeeNumber + " " + item.FirstName
-                    + " " + item.LastName + " " + item.DateOfEmployment + " " + item.Adress
-                    + " " + item.Position + " " + item.SalaryRate + " " + item.WorkingMinutesInMonth + "");
-            }
-        }
+      0
+        
     }
 }
 

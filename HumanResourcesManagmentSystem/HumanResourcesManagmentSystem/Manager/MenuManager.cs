@@ -51,21 +51,26 @@ namespace HumanResourcesManagmentSystem.Services
         public static void QuestionMenu()
         {
             bool isContiune = true;
+            
             do
             {
                 MenuContent.QuestionMenuContents();
                 Console.Write("Daxil et: ");
                 int questionChoiceResult = int.Parse(Console.ReadLine());
+                int employeeNumber;
                 switch (questionChoiceResult)
                 {
                     case 1:
                         Console.Write("İşçinin nömrəsin daxil edin: ");
-                        int employeeNumber = int.Parse(Console.ReadLine());
+                        employeeNumber = int.Parse(Console.ReadLine());
                         QuestionService questionService = new QuestionService();
-                        questionService.EmployeeInfo(employeeNumber);
+                        questionService.GetEmployeeInfo(employeeNumber);
                         isContiune = false;
                         break;
                     case 2:
+                        Console.Write("İşçinin nömrəsin daxil edin: ");
+                        employeeNumber = int.Parse(Console.ReadLine());
+
                         break;
                     case 3:
                         break;
