@@ -1,10 +1,12 @@
 ﻿using System;
 using HumanResourcesManagmentSystem.WarningMessages;
 using HumanResourcesManagmentSystem.SystemContentData.MenuContent;
+using HumanResourcesManagmentSystem.Models;
+using HumanResourcesManagmentSystem.Manager;
 
 namespace HumanResourcesManagmentSystem.Services
 {
-    public static class MenuService
+    public static class MenuManager
     {
         public static void Open()
         {
@@ -12,6 +14,7 @@ namespace HumanResourcesManagmentSystem.Services
         }
         public static void Menu()
         {
+            
             bool isContiune = true;
             do
             {
@@ -31,6 +34,9 @@ namespace HumanResourcesManagmentSystem.Services
 
                         break;
                     case 3:
+                        WorktimeManager.AddEmployeeWorkTime();
+                        break;
+                    case 4:
                         Environment.Exit(0);
                         isContiune = false;
                         break;
@@ -53,7 +59,10 @@ namespace HumanResourcesManagmentSystem.Services
                 switch (questionChoiceResult)
                 {
                     case 1:
-                        Console.WriteLine("hello");
+                        Console.Write("İşçinin nömrəsin daxil edin: ");
+                        int employeeNumber = int.Parse(Console.ReadLine());
+                        QuestionService questionService = new QuestionService();
+                        questionService.EmployeeInfo(employeeNumber);
                         isContiune = false;
                         break;
                     case 2:

@@ -15,14 +15,15 @@ namespace HumanResourcesManagmentSystem.DBconnection
             System.Console.WriteLine("Ugurla qosuldu !");
             sqlConnection.Close();
         }
+
         public static List<Personal> ReadyPersonalList()
         {
             List<Personal> personals = new List<Personal>();
             SqlDataReader sqlDataReader;
             SqlConnection sqlConnection = new SqlConnection(ConnectionStrings);
             sqlConnection.Open();
-            string readyQuery = "select * from tblPersonal";
-            SqlCommand sqlCommand = new SqlCommand(readyQuery,sqlConnection);
+            string readyQuery = "select * from tblPersonal where ";
+            SqlCommand sqlCommand = new SqlCommand(readyQuery, sqlConnection);
             sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {

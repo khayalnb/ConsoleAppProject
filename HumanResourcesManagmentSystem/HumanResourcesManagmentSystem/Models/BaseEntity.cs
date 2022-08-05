@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace HumanResourcesManagmentSystem.Models
 {
-    public class Worktime:BaseEntity
+    public class BaseEntity
     {
-        public int DayOfMonth { get; set; }
-        public DateTime TimeOfEntry { get; set; }
-        public DateTime TimeOfExit { get; set; }
+        public int Id { get; set; }
+        public int EmployeeNumber { get; set; }
     }
 }

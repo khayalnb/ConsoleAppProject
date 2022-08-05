@@ -12,7 +12,9 @@ namespace HumanResourcesManagmentSystem.SystemContentData.MenuContent
             Thread.Sleep(200);
             Console.WriteLine("2.Yeniləmək əməliyyatları");
             Thread.Sleep(200);
-            Console.WriteLine("3.Çıxış");
+            Console.WriteLine("3.İşə giriş çıxış vaxtlarının qeydi:");
+            Thread.Sleep(200);
+            Console.WriteLine("4.Çıxış");
             
         }
         public static void QuestionMenuContents()

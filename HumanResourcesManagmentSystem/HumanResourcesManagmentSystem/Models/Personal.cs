@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace HumanResourcesManagmentSystem.Models
 {
-    public class Personal
+    public class Personal:BaseEntity
     {
-        public int Id { get; set; }
-        public int EmployeeNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfEmployment { get; set; }
